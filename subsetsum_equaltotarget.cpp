@@ -63,7 +63,7 @@ ll expo(ll a, ll b)
 //     return dp[n-1][target];
     
 // }
-//O(N*target), space complexity O(n)
+//O(N*target), space complexity O(n)+O(n*target)
 
 // bool isposs(ll ind,vll &v,ll target,  vector<vll>&dp){
 //     if(target==0)return true;
