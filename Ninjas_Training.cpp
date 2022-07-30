@@ -30,25 +30,64 @@ ll expo(ll a, ll b)
     }
     return res;
 }
+//O(n*9) and space complexity of O(n*3)
+// void Letsgo()
+// {
+//     ll n;
+//     cin >> n;
+//     vector<vector<ll>> v(n, vector<ll>(4)), dp(n, vector<ll>(4));
+//     for (int i = 0; i < n; i++)
+//     {
+//         for (int j = 0; j < 3; j++)
+//         {
+//             cin >> v[i][j];
+//         }
+//     }
+//     dp[0][0] = max(v[0][1], v[0][2]);
+//     dp[0][1] = max(v[0][0], v[0][2]);
+//     dp[0][2] = max(v[0][0], v[0][1]);
 
-int Ninjas_Training(vector<vector<ll>> &v,vector<vector<ll>> &dp, ll days, ll task)
-{
-    if (days < 0)
-    {
-       return 0;
-    }
-    if(task<3&&dp[days][task]!=0)return dp[days][task];
-    ll maxi=0;
-    ll mini=0;
-    for(int i=0;i<3;i++){
-        if(task!=i){
-           maxi=v[days][i] +Ninjas_Training(v,dp,days-1,i);
-           mini=max(maxi,mini);
-        }
+//     rep(i, 1, n)
+//     {
+//         ll pari = LONG_LONG_MIN;
+//         rep(j, 0, 3)
+//         {
+//             ll maxi = LONG_LONG_MIN;
+//             rep(k, 0, 3)
+//             {
+//                 if (j != k)
+//                 {
 
-    }
-    return dp[days][task]=mini;
-}
+//                     pari = dp[i - 1][k] + v[i][k];
+                   
+//                 }
+//                 maxi = max(pari, maxi);
+//             }
+//             dp[i][j] = maxi;
+//         }
+//     }
+  
+//     cout << *max_element(dp[n - 1].begin(),dp[n-1].end());
+// }
+//Time Complexity O(n*3) and spze complexity ...(idk)
+// int Ninjas_Training(vector<vector<ll>> &v,vector<vector<ll>> &dp, ll days, ll task)
+// {
+//     if (days < 0)
+//     {
+//        return 0;
+//     }
+//     if(task<3&&dp[days][task]!=0)return dp[days][task];
+//     ll maxi=0;
+//     ll mini=0;
+//     for(int i=0;i<3;i++){
+//         if(task!=i){
+//            maxi=v[days][i] +Ninjas_Training(v,dp,days-1,i);
+//            mini=max(maxi,mini);
+//         }
+
+//     }
+//     return dp[days][task]=mini;
+// }
 void Letsgo()
 {
     ll n;
