@@ -47,6 +47,50 @@ int frogjump(ll ind,vll v){
 
 
 }
+//O(n) time complexity Space Complexity O(1)
+// void Letsgo()
+// {
+//     cin >> n;
+//     read(n, v);
+//     ll prev = 0, prev1 = 0, curr = 0;
+//     rep(i, 1, n)
+//     {
+//         ll pr = prev + abs(v[i] - v[i - 1]);
+//         ll mar = LONG_LONG_MAX;
+//         if (i > 1)
+//         {
+//             mar = prev1 + abs(v[i] - v[i - 2]);
+//         }
+//         curr = min(pr, mar);
+
+//         prev1 = prev;
+//         prev = curr;
+//     }
+//     cout<<prev;
+// }
+
+
+//O(n) space complexity and time complexity O(n)
+
+// void Letsgo()
+// {
+//     cin >> n;
+//     read(n, v);
+//     vll dp(n);
+//     dp[0] = 0;
+//     rep(i, 1, n)
+//     {
+//         ll prev = dp[i - 1] + abs(v[i] - v[i - 1]);
+//         ll prev1 = LONG_LONG_MAX;
+//         if (i > 1)
+//         {
+//             prev1 = dp[i - 2] + abs(v[i] - v[i - 2]);
+//         }
+//         dp[i] = min(prev, prev1);
+//        // cout << dp[i] << " ";
+//     }
+//      cout<<dp[n-1];
+// }
 void Letsgo()
 {
     ll n;
