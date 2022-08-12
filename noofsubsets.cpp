@@ -79,11 +79,14 @@ ll expo(ll a, ll b)
 //     {
 //         dp[v[0]] = 1;
 //     }
+//here is a edge case of 0 0 0 x
+//if you will declare dp[0] and temp of temp[0] in for loop the anwer wld be 1 but the expected answer is 4
+//         dp[0] = 1;
+//         temp[0] = 1;
 
 //     rep(i, 1, n)
 //     {
-//         dp[0] = 1;
-//         temp[0] = 1;
+
 //         rep(j, 0, target + 1)
 //         {
 //             ll nottake = dp[j];
