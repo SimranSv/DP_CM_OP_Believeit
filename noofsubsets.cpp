@@ -81,6 +81,7 @@ ll expo(ll a, ll b)
 //     }
 //here is a edge case of 0 0 0 x
 //if you will declare dp[0] and temp of temp[0] in for loop the anwer wld be 1 but the expected answer is 4
+//So declare it outside
 //         dp[0] = 1;
 //         temp[0] = 1;
 
