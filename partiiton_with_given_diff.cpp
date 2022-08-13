@@ -51,16 +51,27 @@ ll expo(ll a, ll b)
 // totsum-s1=s1+d
 //(totsum-d)/2=s1
 // so now find s1 such that it satisifies (totsum-d)/2
-
-ll isposs(vll v, ll target, int n)
+ll isposs(vll &v, ll target, int n)
 {
 
     vll dp(target + 1), temp(target + 1);
 
-    
+ // Base Case :is for 0,bcz we have 2 choices for 0 either take or nottake and it doesnt really matter
+ //so take and nottake and hence dp[0]=2 if v[0]=2
+ //else we will simply nottake it and hence we have only one choice
+ 
     dp[0] = 1;
     temp[0] = 1;
-    rep(i, 0, n)
+    if(v[0]==0){
+        dp[v[0]]=2,temp[v[0]]=2;
+    }else {
+        if(v[0]<=target){
+                
+            dp[v[0]]=1;
+            temp[v[0]]=1;
+        }
+    }
+    rep(i, 1, n)
     {
 
         rep(j, 0, target + 1)
@@ -71,7 +82,7 @@ ll isposs(vll v, ll target, int n)
             {
                 take = dp[j - v[i]];
             }
-            temp[j] = take + nottake;
+            temp[j] = (take%mod+ nottake%mod)%mod;
         }
         dp = temp;
     }
